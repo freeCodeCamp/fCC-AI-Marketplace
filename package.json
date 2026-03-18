@@ -9,8 +9,7 @@
     "scaffold": "tsx scripts/scaffold.ts",
     "lint": "oxlint .",
     "format": "oxfmt --write .",
-    "format:check": "oxfmt --check .",
-    "check": "turbo check"
+    "format:check": "oxfmt --check ."
   },
   "dependencies": {
     "@clack/prompts": "^1.1.0"

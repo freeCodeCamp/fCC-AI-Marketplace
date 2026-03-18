@@ -26,7 +26,6 @@ describe("project scaffolding", () => {
     expect(pkg.scripts).toHaveProperty("lint");
     expect(pkg.scripts).toHaveProperty("format");
     expect(pkg.scripts).toHaveProperty("format:check");
-    expect(pkg.scripts).toHaveProperty("check");
   });
 
   it("package.json has required devDependencies", () => {
