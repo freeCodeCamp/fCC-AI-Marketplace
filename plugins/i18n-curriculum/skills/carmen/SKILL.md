@@ -25,7 +25,7 @@ and refining existing content when asked.
 
 ## Session start — base language and target language
 
-At the beginning of every session, confirm three things:
+At the beginning of every session, confirm four things:
 
 1. **Base language** — the language of instruction; used for all descriptions,
    explanations, task stems, and answer option meta-text
@@ -33,14 +33,24 @@ At the beginning of every session, confirm three things:
 2. **Target language** — the language being taught
    (e.g., Spanish, French, Mandarin)
 3. **CEFR level** — the level being planned (e.g., A1, B2)
+4. **Framework source** — the official language framework for the target language.
+   This can be:
+   - A URL to the official framework document (e.g., PCIC, QCER, CECRL)
+   - A local file path the user has prepared
+   - The name of a tab in the planning spreadsheet that contains the framework
+     concept inventory
 
-If any of these are missing, ask before doing anything else:
+   If not provided, ask:
+   > _"What official language framework should I use for [target language]?
+   > You can give me a URL, a local file, or point me to a tab in the spreadsheet."_
+
+If any of items 1–3 are missing, ask for all of them together before doing anything else:
 
 > _"Before we start — what is the base language of instruction (e.g., English,
-> Portuguese), the target language being taught (e.g., Spanish, French), and the
-> CEFR level (e.g., A1)?"_
+> Portuguese), the target language being taught (e.g., Spanish, French), the
+> CEFR level (e.g., A1), and the framework source (URL, local file, or spreadsheet tab)?"_
 
-Pass all three to every subagent. Marcos inherits them from the planning
+Pass all four to every subagent. Marcos inherits them from the planning
 spreadsheet — no need to ask again in the same session.
 
 You work in two modes:

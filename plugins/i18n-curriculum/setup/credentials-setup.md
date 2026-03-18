@@ -135,12 +135,34 @@ You run it yourself — no token or plugin configuration is required.
 
 ---
 
+## Part 4 — Language framework (each team member, before first session)
+
+Carmen needs access to the official language framework for the target language
+being taught. This is used to identify and rank teachable concepts at each CEFR level.
+
+**You do not need to configure this in advance.** Carmen will ask for it at the
+start of every session. Have one of the following ready:
+
+- **A URL** to the official online framework document
+  (e.g., PCIC for Spanish, QCER for Portuguese, CECRL for French,
+  Goethe-Institut Curriculum for German)
+- **A local file** you have prepared with the framework inventory for your target language
+- **A spreadsheet tab name** if your planning spreadsheet already has the framework
+  concept inventory loaded (common for teams that have been using the plugin for a while)
+
+Carmen will ask:
+> _"What official language framework should I use? You can give me a URL, a local
+> file, or point me to a tab in the spreadsheet."_
+
+---
+
 ## Quick reference — what each agent needs
 
-| Agent  | Needs                                 | Where                         |
-| ------ | ------------------------------------- | ----------------------------- |
-| Carmen | `GOOGLE_SERVICE_ACCOUNT_JSON` env var | Set in shell profile          |
-| Marcos | `GOOGLE_SERVICE_ACCOUNT_JSON` env var | Set in shell profile          |
-| Marcos | Cloned repo path                      | Told by user each session     |
-| Marcos | Feature branch                        | User creates; Marcos checks   |
-| Both   | Sheet URL                             | Provided by user each session |
+| Agent  | Needs                                 | Where                              |
+| ------ | ------------------------------------- | ---------------------------------- |
+| Carmen | `GOOGLE_SERVICE_ACCOUNT_JSON` env var | Set in shell profile               |
+| Carmen | Language framework source             | Provided by user each session      |
+| Marcos | `GOOGLE_SERVICE_ACCOUNT_JSON` env var | Set in shell profile               |
+| Marcos | Cloned repo path                      | Told by user each session          |
+| Marcos | Feature branch                        | User creates; Marcos checks        |
+| Both   | Sheet URL                             | Provided by user each session      |

@@ -29,6 +29,8 @@ High-level summary:
 2. Each team member stores the JSON as the `GOOGLE_SERVICE_ACCOUNT_JSON` environment variable
 3. Each team member clones the curriculum Git repo
 4. Each team member installs and authenticates the GitHub CLI (`gh auth login`) for PR creation
+5. Each team member has the official language framework ready for their target language
+   (URL, local file, or spreadsheet tab) — Carmen asks for this at the start of each session
 
 ---
 
