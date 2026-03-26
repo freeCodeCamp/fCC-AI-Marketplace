@@ -8,6 +8,31 @@ Key concepts:
 - **Plugin** — A Claude Code-specific bundle that wraps one or more skills with hooks, MCP server configs, and static agents.
 - **Agent** — A shared agent definition (in `agents/`) that can be referenced by plugins or used standalone.
 
+## Development Setup
+
+### Prerequisites
+
+- Node.js >= 22
+- pnpm
+
+### Setup
+
+```sh
+pnpm install
+```
+
+### Commands
+
+| Command                 | Description                                         |
+| ----------------------- | --------------------------------------------------- |
+| `pnpm run validate`     | Check plugin and skill structural correctness       |
+| `pnpm run test`         | Run tests                                           |
+| `pnpm run lint`         | Run linter                                          |
+| `pnpm run format`       | Format code                                         |
+| `pnpm run format:check` | Check formatting                                    |
+| `pnpm run scaffold`     | Interactively create a new plugin or skill          |
+| `pnpm turbo check`      | Full quality gate (validate + test + lint + format) |
+
 ## Quick Start: Creating a Plugin
 
 1. Create a new plugin interactively:
@@ -145,26 +170,14 @@ When writing a skill, always write `SKILL.md` to the standard. Keep skill instru
 
 ## Validation
 
-Run validation before submitting a PR:
+Run `pnpm turbo check` before submitting a PR. This runs the full quality gate: validation, tests, linting, and formatting. CI runs the same check automatically on every pull request.
 
-```sh
-pnpm run validate
-```
-
-This checks:
+The validator (`pnpm run validate`) checks:
 
 - `plugin.json` exists and has required fields (`name`, `description`, `version`)
 - Every skill has a `SKILL.md` with `name` and `description` in frontmatter
 - Standalone skill names follow the lowercase-with-hyphens convention
 - Plugin directories contain a `README.md`
-
-Run the full quality gate to also check tests, linting, and formatting:
-
-```sh
-pnpm turbo check
-```
-
-CI runs `pnpm turbo check` automatically on every pull request.
 
 ## PR Guidelines
 

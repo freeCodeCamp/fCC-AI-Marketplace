@@ -4,7 +4,7 @@ A public marketplace of AI-powered plugins, skills, and agents for freeCodeCamp.
 
 ## Introduction
 
-The fCC AI Marketplace is a public collection of AI-powered tooling for freeCodeCamp staff and maintainers. It provides modular plugins, skills, and agents that work with Claude Code as the primary platform, and with other AI coding tools (Codex CLI, OpenCode, Gemini CLI) via the [Agent Skills](https://agentskills.io) standard.
+The fCC AI Marketplace is a public collection of AI-powered tooling for freeCodeCamp staff and maintainers. It provides modular plugins, skills, and agents that work with Claude Code as the primary platform, and with 30+ other AI coding tools via the [Agent Skills](https://agentskills.io) standard.
 
 ## Installation
 
@@ -52,41 +52,21 @@ claude --plugin-dir ./plugins/<plugin-name>
 
 ## Supported Tools
 
-| Tool        | Skills | Full Plugins |
-| ----------- | ------ | ------------ |
-| Claude Code | Yes    | Yes          |
-| Codex CLI   | Yes    | No           |
-| OpenCode    | Yes    | No           |
-| Gemini CLI  | Yes    | No           |
+Skills follow the [Agent Skills](https://agentskills.io) standard and are portable across 30+ tools. Full plugins (hooks, MCP servers, agents) are Claude Code-specific.
 
-## Development
-
-### Prerequisites
-
-- Node.js >= 22
-- pnpm
-
-### Setup
-
-```sh
-pnpm install
-```
-
-### Commands
-
-| Command                 | Description                                         |
-| ----------------------- | --------------------------------------------------- |
-| `pnpm run validate`     | Check plugin and skill structural correctness       |
-| `pnpm run test`         | Run tests                                           |
-| `pnpm run lint`         | Run linter                                          |
-| `pnpm run format`       | Format code                                         |
-| `pnpm run format:check` | Check formatting                                    |
-| `pnpm run scaffold`     | Interactively create a new plugin or skill          |
-| `pnpm turbo check`      | Full quality gate (validate + test + lint + format) |
+| Tool                                 | Skills | Full Plugins |
+| ------------------------------------ | ------ | ------------ |
+| Claude Code                          | Yes    | Yes          |
+| Codex CLI                            | Yes    | No           |
+| OpenCode                             | Yes    | No           |
+| VS Code / GitHub Copilot             | Yes    | No           |
+| Cursor                               | Yes    | No           |
+| Gemini CLI                           | Yes    | No           |
+| [and others](https://agentskills.io) | Yes    | No           |
 
 ## Contributing
 
-Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on creating plugins, skills, and agents, including naming rules, the SKILL.md format, plugin structure, and PR expectations. Run `pnpm turbo check` before submitting a pull request.
+See [Contributing Guidelines](CONTRIBUTING.md).
 
 ## License
 
