@@ -13,7 +13,7 @@ One person on the team creates the service account and shares the credentials wi
 
 1. Go to [console.cloud.google.com](https://console.cloud.google.com)
 2. Click the project dropdown at the top → **New Project**
-3. Name it `spanish-curriculum` → **Create**
+3. Name it `i18n-curriculum` → **Create**
 
 ### Step 2 — Enable the Google Sheets API
 
@@ -112,46 +112,57 @@ Marcos writes task files directly into a cloned Git repository. Each team member
 ### Step 1 — Clone the curriculum repo
 
 ```bash
-git clone https://github.com/YOUR_ORG/spanish-curriculum-content.git
-cd spanish-curriculum-content
+git clone https://github.com/YOUR_ORG/YOUR_CURRICULUM_REPO.git
+cd YOUR_CURRICULUM_REPO
 ```
 
-### Step 2 — Set up the GitHub MCP (optional, for PR creation from sessions)
+### Step 2 — Set up the GitHub CLI (for PR creation)
 
-If you want Marcos to be able to open GitHub PRs directly from a session:
+Marcos instructs you to open PRs using the GitHub CLI (`gh`). Make sure it is
+installed and authenticated before your first session:
 
-1. Go to [github.com/settings/tokens](https://github.com/settings/tokens)
-2. **Generate new token (classic)**
-3. Name: `spanish-curriculum-plugin`
-4. Scopes: check `repo` (full control)
-5. Copy the token
+```bash
+# Install (if not already installed)
+# Mac:   brew install gh
+# Linux: https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 
-Open the plugin's `.mcp.json` file and replace `REPLACE_WITH_YOUR_GITHUB_TOKEN`:
-
-```json
-{
-  "mcpServers": {
-    "github": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "ghp_yourTokenHere"
-      }
-    }
-  }
-}
+# Authenticate
+gh auth login
 ```
 
-Restart the Claude desktop app to activate.
+Marcos will provide the exact `gh pr create` command at the end of each session.
+You run it yourself — no token or plugin configuration is required.
+
+---
+
+## Part 4 — Language framework (each team member, before first session)
+
+Carmen needs access to the official language framework for the target language
+being taught. This is used to identify and rank teachable concepts at each CEFR level.
+
+**You do not need to configure this in advance.** Carmen will ask for it at the
+start of every session. Have one of the following ready:
+
+- **A URL** to the official online framework document
+  (e.g., PCIC for Spanish, QCER for Portuguese, CECRL for French,
+  Goethe-Institut Curriculum for German)
+- **A local file** you have prepared with the framework inventory for your target language
+- **A spreadsheet tab name** if your planning spreadsheet already has the framework
+  concept inventory loaded (common for teams that have been using the plugin for a while)
+
+Carmen will ask:
+> _"What official language framework should I use? You can give me a URL, a local
+> file, or point me to a tab in the spreadsheet."_
 
 ---
 
 ## Quick reference — what each agent needs
 
-| Agent  | Needs                                 | Where                         |
-| ------ | ------------------------------------- | ----------------------------- |
-| Carmen | `GOOGLE_SERVICE_ACCOUNT_JSON` env var | Set in shell profile          |
-| Marcos | `GOOGLE_SERVICE_ACCOUNT_JSON` env var | Set in shell profile          |
-| Marcos | Cloned repo path                      | Told by user each session     |
-| Marcos | Feature branch                        | User creates; Marcos checks   |
-| Both   | Sheet URL                             | Provided by user each session |
+| Agent  | Needs                                 | Where                              |
+| ------ | ------------------------------------- | ---------------------------------- |
+| Carmen | `GOOGLE_SERVICE_ACCOUNT_JSON` env var | Set in shell profile               |
+| Carmen | Language framework source             | Provided by user each session      |
+| Marcos | `GOOGLE_SERVICE_ACCOUNT_JSON` env var | Set in shell profile               |
+| Marcos | Cloned repo path                      | Told by user each session          |
+| Marcos | Feature branch                        | User creates; Marcos checks        |
+| Both   | Sheet URL                             | Provided by user each session      |
